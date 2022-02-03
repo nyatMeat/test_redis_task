@@ -1,0 +1,28 @@
+version: "3.4"
+
+services:
+  php:
+    container_name: php
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    environment:
+      APP_ENV: prod
+    networks:
+      - test-redis-network
+    ports:
+      - "8080:8080"
+
+  redis:
+    container_name: redis
+    build:
+      context: .
+      dockerfile: ./docker/redis/Dockerfile
+    networks:
+      - test-redis-network
+    ports:
+      - "6379:6379"
+
+networks:
+  test-redis-network:
+    driver: bridge
