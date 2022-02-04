@@ -16,14 +16,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class VisitController extends AbstractController
 {
 
-    protected VisitCounterSingleKeys $visitCounter;
+    protected VisitServiceInterface $visitCounter;
 
     /**
      * VisitController constructor.
      *
-     * @param VisitCounterSingleKeys $visitCounter
+     * @param VisitServiceInterface $visitCounter
      */
-    public function __construct(VisitCounterSingleKeys $visitCounter)
+    public function __construct(VisitServiceInterface $visitCounter)
     {
         $this->visitCounter = $visitCounter;
     }
