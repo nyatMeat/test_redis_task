@@ -30,7 +30,7 @@ class VisitController extends AbstractController
 
 
     /**
-     * @Route("/visit/{countryCode}", name="visit")
+     * @Route("/visit/{countryCode}", name="visit", methods={"POST"})
      * @param $countryCode
      */
     public function visit($countryCode)
